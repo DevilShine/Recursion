@@ -15,11 +15,11 @@ console.log(end);
 function sum(begin, end, step) {
   if (begin > end) {
     return 0;
-  } else if (begin < 0 || end < 0) {
+  } else if (begin < 0 || end < 0 || step <= 0) {
     return 0;
   } else {
-    return begin + sum(begin + 1, end);
+    return begin + sum(begin + step, end, step);
   }
 }
 
-console.log(sum(3, 5));
+console.log(sum(3, 5, 2));
